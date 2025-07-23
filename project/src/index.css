@@ -1,0 +1,785 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-fast {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-ultra-fast {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-fast {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes spin-reverse-slow {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.8;
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.7);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 30px rgba(6, 182, 212, 1);
+  }
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes particle {
+  0% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg) translateY(-20px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0) rotate(360deg) translateY(-40px);
+  }
+}
+
+/* Advanced Loader Animations */
+@keyframes float-particle {
+  0%, 100% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px) scale(1.1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-5px) translateX(-3px) scale(0.9);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateY(-15px) translateX(2px) scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+@keyframes grid-pulse {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes energy-stream {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes ring-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ring-expand-0 {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(20);
+    opacity: 0;
+  }
+}
+
+@keyframes ring-expand-1 {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(25);
+    opacity: 0;
+  }
+}
+
+@keyframes ring-expand-2 {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(30);
+    opacity: 0;
+  }
+}
+
+@keyframes core-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes energy-burst {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -100%) rotate(var(--rotation, 0deg)) scaleY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -100%) rotate(var(--rotation, 0deg)) scaleY(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -100%) rotate(var(--rotation, 0deg)) scaleY(0);
+  }
+}
+
+@keyframes orbital-0 {
+  from {
+    transform: rotate(0deg) translateX(40px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(40px) rotate(-360deg);
+  }
+}
+
+@keyframes orbital-1 {
+  from {
+    transform: rotate(90deg) translateX(50px) rotate(-90deg);
+  }
+  to {
+    transform: rotate(450deg) translateX(50px) rotate(-450deg);
+  }
+}
+
+@keyframes orbital-2 {
+  from {
+    transform: rotate(180deg) translateX(60px) rotate(-180deg);
+  }
+  to {
+    transform: rotate(540deg) translateX(60px) rotate(-540deg);
+  }
+}
+
+@keyframes orbital-3 {
+  from {
+    transform: rotate(270deg) translateX(70px) rotate(-270deg);
+  }
+  to {
+    transform: rotate(630deg) translateX(70px) rotate(-630deg);
+  }
+}
+
+/* Splash cursor effect animations */
+@keyframes splash-ripple {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+  }
+}
+
+@keyframes splash-ripple-delayed {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.8;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  100% {
+    width: 120px;
+    height: 120px;
+    opacity: 0;
+  }
+}
+
+@keyframes splash-dot {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes splash-particle {
+  0% {
+    transform: translate(-50%, -50%) rotate(var(--rotation, 0deg)) translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(var(--rotation, 0deg)) translateY(-30px) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes splash-glow {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Confetti celebration animations */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes celebration-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  40% {
+    transform: translateY(-10px) scale(1.05);
+  }
+  60% {
+    transform: translateY(-5px) scale(1.02);
+  }
+}
+
+@keyframes celebration-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.6), 0 0 60px rgba(168, 85, 247, 0.4);
+  }
+}
+
+/* ENHANCED Advanced Tailwind Shape Blur Animations - MAXIMUM VISIBILITY */
+@keyframes morph-blob {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    opacity: 0.9;
+  }
+  16% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    transform: translate(-50%, -50%) rotate(60deg) scale(1.15);
+    opacity: 1;
+  }
+  33% {
+    border-radius: 50% 60% 30% 60% / 60% 30% 60% 40%;
+    transform: translate(-50%, -50%) rotate(120deg) scale(0.85);
+    opacity: 0.8;
+  }
+  50% {
+    border-radius: 60% 40% 60% 30% / 30% 60% 40% 70%;
+    transform: translate(-50%, -50%) rotate(180deg) scale(1.2);
+    opacity: 1;
+  }
+  66% {
+    border-radius: 40% 70% 50% 60% / 70% 40% 50% 30%;
+    transform: translate(-50%, -50%) rotate(240deg) scale(0.9);
+    opacity: 0.9;
+  }
+  83% {
+    border-radius: 70% 30% 60% 50% / 40% 70% 30% 60%;
+    transform: translate(-50%, -50%) rotate(300deg) scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes radial-pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  20% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.8;
+  }
+  40% {
+    transform: translate(-50%, -50%) scale(1.4);
+    opacity: 1;
+  }
+  60% {
+    transform: translate(-50%, -50%) scale(1.3);
+    opacity: 0.9;
+  }
+  80% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.7;
+  }
+}
+
+@keyframes orbital-dance {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(60px) rotate(0deg) scale(1);
+    opacity: 0.7;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  25% {
+    transform: translate(-50%, -50%) rotate(90deg) translateX(80px) rotate(-90deg) scale(1.3);
+    opacity: 1;
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg) translateX(70px) rotate(-180deg) scale(0.8);
+    opacity: 0.8;
+    border-radius: 50% 60% 30% 60% / 60% 30% 60% 40%;
+  }
+  75% {
+    transform: translate(-50%, -50%) rotate(270deg) translateX(90px) rotate(-270deg) scale(1.2);
+    opacity: 0.6;
+    border-radius: 40% 70% 50% 60% / 70% 40% 50% 30%;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(60px) rotate(-360deg) scale(1);
+    opacity: 0.7;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+/* Enhanced morphing variations - MORE VISIBLE */
+@keyframes morph-blob-reverse {
+  0%, 100% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    transform: translate(-50%, -50%) rotate(360deg) scale(1);
+    opacity: 0.8;
+  }
+  20% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: translate(-50%, -50%) rotate(288deg) scale(1.2);
+    opacity: 1;
+  }
+  40% {
+    border-radius: 40% 70% 50% 60% / 70% 40% 50% 30%;
+    transform: translate(-50%, -50%) rotate(216deg) scale(0.8);
+    opacity: 0.9;
+  }
+  60% {
+    border-radius: 70% 30% 60% 50% / 40% 70% 30% 60%;
+    transform: translate(-50%, -50%) rotate(144deg) scale(1.25);
+    opacity: 1;
+  }
+  80% {
+    border-radius: 50% 60% 30% 60% / 60% 30% 60% 40%;
+    transform: translate(-50%, -50%) rotate(72deg) scale(0.85);
+    opacity: 0.8;
+  }
+}
+
+/* Enhanced floating animation with more variation */
+@keyframes enhanced-float {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) translateX(3px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-12px) translateX(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-6px) translateX(-3px) rotate(-2deg);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s infinite;
+}
+
+.animate-pulse-fast {
+  animation: pulse-fast 1.5s infinite;
+}
+
+.animate-pulse-ultra-fast {
+  animation: pulse-ultra-fast 0.8s infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-enhanced-float {
+  animation: enhanced-float 4s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.animate-spin-fast {
+  animation: spin-fast 2s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 6s linear infinite;
+}
+
+.animate-spin-reverse-slow {
+  animation: spin-reverse-slow 10s linear infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-scan {
+  animation: scan 2s linear infinite;
+}
+
+.animate-particle {
+  animation: particle 2s ease-out infinite;
+}
+
+/* Splash effect animation classes */
+.animate-splash-ripple {
+  animation: splash-ripple 0.8s ease-out forwards;
+}
+
+.animate-splash-ripple-delayed {
+  animation: splash-ripple-delayed 1s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+.animate-splash-dot {
+  animation: splash-dot 0.6s ease-out forwards;
+}
+
+.animate-splash-particle {
+  animation: splash-particle 0.8s ease-out forwards;
+}
+
+.animate-splash-glow {
+  animation: splash-glow 0.8s ease-out forwards;
+}
+
+/* Confetti celebration classes */
+.animate-confetti-fall {
+  animation: confetti-fall 3s ease-out forwards;
+}
+
+.animate-celebration-bounce {
+  animation: celebration-bounce 2s ease-out;
+}
+
+.animate-celebration-glow {
+  animation: celebration-glow 2s ease-in-out infinite;
+}
+
+/* ENHANCED Advanced Tailwind Shape Blur Animation Classes - MAXIMUM VISIBILITY */
+.animate-morph-blob {
+  animation: morph-blob 8s ease-in-out infinite;
+}
+
+.animate-morph-blob-reverse {
+  animation: morph-blob-reverse 12s ease-in-out infinite;
+}
+
+.animate-radial-pulse {
+  animation: radial-pulse 4s ease-in-out infinite;
+}
+
+.animate-orbital-dance {
+  animation: orbital-dance 12s linear infinite;
+}
+
+/* Full screen burst animation */
+.animate-full-screen-burst {
+  animation: full-screen-burst 0.8s ease-out forwards;
+}
+
+.bg-gradient-conic {
+  background-image: conic-gradient(var(--tw-gradient-stops));
+}
+
+.bg-gradient-radial {
+  background-image: radial-gradient(var(--tw-gradient-stops));
+}
+
+/* ENHANCED Custom Tailwind utilities for advanced shape blur effects - MAXIMUM VISIBILITY */
+@layer utilities {
+  .blur-shape-sm {
+    filter: blur(4px) brightness(1.2) saturate(1.2);
+    backdrop-filter: blur(4px);
+  }
+  
+  .blur-shape-md {
+    filter: blur(8px) brightness(1.3) saturate(1.3);
+    backdrop-filter: blur(8px);
+  }
+  
+  .blur-shape-lg {
+    filter: blur(16px) brightness(1.4) saturate(1.4);
+    backdrop-filter: blur(16px);
+  }
+  
+  .blur-shape-xl {
+    filter: blur(24px) brightness(1.5) saturate(1.5);
+    backdrop-filter: blur(24px);
+  }
+  
+  .blur-shape-2xl {
+    filter: blur(32px) brightness(1.6) saturate(1.6);
+    backdrop-filter: blur(32px);
+  }
+  
+  .blur-shape-3xl {
+    filter: blur(48px) brightness(1.7) saturate(1.7);
+    backdrop-filter: blur(48px);
+  }
+
+  /* Force hardware acceleration for better performance */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform, opacity, filter;
+  }
+
+  /* Enhanced visibility utilities - MAXIMUM EFFECT */
+  .visible-blur {
+    filter: blur(8px) brightness(1.4) saturate(1.5) contrast(1.2);
+  }
+
+  .visible-blur-lg {
+    filter: blur(16px) brightness(1.5) saturate(1.6) contrast(1.3);
+  }
+
+  .visible-blur-xl {
+    filter: blur(24px) brightness(1.6) saturate(1.7) contrast(1.4);
+  }
+
+  /* Maximum visibility blur effects */
+  .max-visible-blur {
+    filter: blur(12px) brightness(1.8) saturate(2) contrast(1.5);
+    opacity: 0.9 !important;
+  }
+
+  .max-visible-blur-lg {
+    filter: blur(20px) brightness(1.9) saturate(2.2) contrast(1.6);
+    opacity: 0.8 !important;
+  }
+
+  .max-visible-blur-xl {
+    filter: blur(32px) brightness(2) saturate(2.5) contrast(1.8);
+    opacity: 0.7 !important;
+  }
+}
+
+/* Ensure proper stacking and visibility */
+.shape-blur-container {
+  position: relative;
+  isolation: isolate;
+}
+
+.shape-blur-layer {
+  position: absolute;
+  pointer-events: none;
+  will-change: transform, opacity, filter;
+  transform: translateZ(0); /* Force hardware acceleration */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply text-slate-800;
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+/* Debug helper - remove in production */
+.debug-blur {
+  outline: 1px solid rgba(255, 0, 0, 0.3) !important;
+}
+
+/* Force visibility for all blur effects */
+.force-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+/* Flip Card Styles */
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  transform-style: preserve-3d;
+}
+
+.flip-card-front,
+.flip-card-back {
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.group:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* 3D Transform Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.hover\:rotate-y-180:hover {
+  transform: rotateY(180deg);
+}
+
